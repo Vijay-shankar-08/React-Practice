@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 
 class Task3 extends Component {
-    state = {
-        names: [],
-    };
+
+        state = {
+            names: [],
+        };
+   
+   
+    
 
     handleSubmit = (event) => {
         event.preventDefault();
         let value = document.getElementById("namevalue").value;
+        console.log(event.target.value);
         let value1 = document.getElementById("lastnamevalue").value;
         const obj = { id: Date.now(), value, value1 };
         console.log(obj.id);
@@ -19,10 +24,9 @@ class Task3 extends Component {
 
         return;
     };
-
     renderTable() {
         return (
-            this.state.names.map((name, index) => {
+            this.state.names.map((name) => {
                 const { id, value, value1 } = name; //destructuring
                 return (
                     <tr key={id}>
@@ -40,11 +44,11 @@ class Task3 extends Component {
                 <form onSubmit={this.handleSubmit} id="myform">
                     <label>
                         FirstName:
-            <input type="text" name="name" id="namevalue" />
-            LastName
-            <input type="text" name="lastname" id="lastnamevalue" />
+                       <input type="text" name="name" id="namevalue" />
+                        LastName
+                       <input type="text"  name="lastname" id="lastnamevalue" />
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input type="submit"  value="Submit" />
                 </form>
 
                 {/* Table */}
@@ -55,8 +59,7 @@ class Task3 extends Component {
                             <th>FirstNames</th>
                             <th>LastName</th>
                         </tr>
-                        {/* Render dynamic rows
-             */}
+                        {/* Render dynamic rows*/}
                         {this.renderTable()}
                     </tbody>
                 </table>

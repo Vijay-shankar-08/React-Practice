@@ -14,14 +14,16 @@ import ParentMark from './components/ParentMark'
 import Click from './components/Click'
 import Head from './components/Head'
 import FRparent from './components/FRparent'
-import Profile from './components/Profile'
+import Profile from './components/Profile' 
 import Dashboard from './components/Dasboard'
 import Home from './components/Home'
 import Refparent from './components/Refparent'
-import Task3 from './components/Task3'
+// import Task3 from './components/Task3'
+import Mytask from './components/Mytask'
+import Todo from './components/Todo'
 
-const Profile = lazy(() => import('./components/Profile'))
-const Dashboard = lazy(() => import('./components/Dasboard'))
+// const Profile = lazy(() => import('./components/Profile'))
+// const Dashboard = lazy(() => import('./components/Dasboard'))
 class App extends Component {
   render() {
     return (
@@ -55,7 +57,7 @@ class App extends Component {
       // </Router>
       //  </Suspense>
       <div>
-        <Timer name="Timer" />
+        {/* <Timer name="Timer" />
         <State />
         <Derived />
         <Test1 />
@@ -69,8 +71,8 @@ class App extends Component {
         <Click name="vijay" />
         <Head />
         <Refparent />
-        <FRparent />
-        <Task3 />
+        <FRparent /> */}
+        <Todo />
       </div>
     )
   }

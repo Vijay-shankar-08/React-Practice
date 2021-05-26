@@ -16,40 +16,40 @@ class Condition extends Component {
         
 
         // Ternary conditional
-        return (
-            this.state.isLoggedIn ? 
-            <div>Welcome</div> :
-            <div>please Login</div>
-        )
+        // return (
+        //     this.state.isLoggedIn ? 
+        //     <div>Welcome</div> :
+        //     <div>please Login</div>
+        // )
 
 
-        //element varibale
-        let message 
-        if(this.state.isLoggedIn){
-            message = <div>welcome</div>
-        }else{
-            message = <div>pleasesign in</div>
-        }
-        return (
-            <div>{message}</div>
-        )
+        // //element varibale
+        // let message 
+        // if(this.state.isLoggedIn){
+        //     message = <div>welcome</div>
+        // }else{
+        //     message = <div>pleasesign in</div>
+        // }
+        // return (
+        //     <div>{message}</div>
+        // )
         
 
-        //if-else
-        if(this.state.isLoggedIn){
-            return (
-                <div>
-                    <h1>Welcome user</h1>
-                </div>
-            )
-        }else{
-            return (
-                <div>
-                    <h1>Please LogIn</h1>
+        // //if-else
+        // if(this.state.isLoggedIn){
+        //     return (
+        //         <div>
+        //             <h1>Welcome user</h1>
+        //         </div>
+        //     )
+        // }else{
+        //     return (
+        //         <div>
+        //             <h1>Please LogIn</h1>
 
-                </div>
-            )
-        }
+        //         </div>
+        //     )
+        // }
        
     }
 }

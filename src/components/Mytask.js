@@ -16,6 +16,17 @@ class Mytask extends Component {
             [evt.target.name]: value
         })
     }
+    emailCheck = (value) => {
+        let exist = true
+        this.state.names.map(name => {
+            console.log(name,value)
+            if(name.value2 === value){
+                exist = false
+                // console.log(count)
+            }
+        })
+        return exist
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -23,14 +34,19 @@ class Mytask extends Component {
         let value1 = this.state.lname
         let value2 =this.state.email
         const obj = { id: Date.now(), value, value1,value2 };
-        this.setState({
-            names: [obj, ...this.state.names],
-            fname: '',
-            lname: '',
-            email: '',
-
-        });
-        event.preventDefault();
+        if(this.emailCheck(value2)){
+            // console.log(this.emailCheck(value2))
+                this.setState({
+                names: [obj, ...this.state.names],
+                fname: '',
+                lname: '',
+                email: '',
+    
+            });
+        }else{
+            alert("email already exist")
+        }
+        
     }
     renderTable() {
         return (

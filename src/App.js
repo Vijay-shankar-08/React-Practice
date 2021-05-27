@@ -18,9 +18,9 @@ import Profile from './components/Profile'
 import Dashboard from './components/Dasboard'
 import Home from './components/Home'
 import Refparent from './components/Refparent'
-// import Task3 from './components/Task3'
 import Mytask from './components/Mytask'
 import Todo from './components/Todo'
+import Calculator from './components/Calculator';
 
 // const Profile = lazy(() => import('./components/Profile'))
 // const Dashboard = lazy(() => import('./components/Dasboard'))
@@ -28,52 +28,84 @@ class App extends Component {
   render() {
     return (
       // <Suspense fallback={<h2>loading....</h2>}>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/profile'>Profile</Link>
+            </li>
+          </ul>
+          <hr />
+          <Switch>
+            <Route path='/dashboard' component={Dashboard}></Route>
+            <Route  exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/profile'>
+              <Profile />
+            </Route>
+            <Route path='/timer'>
+              <Timer name="Timer" />
+            </Route>
+            <Route path='/state'>
+              <State />
+            </Route>
+            <Route path='/derived'>
+              <Derived />
+            </Route>
+            <Route path='/test1'>
+              <Test1 />
+            </Route>
+            <Route path='/test2'>
+              <Test2 />
+            </Route>
+            <Route path='/parent'>
+              <Parent />
+            </Route>
+            <Route path='/buttonpresent'>
+              <BtnPresent />
+            </Route>
+            <Route path='/condition'>
+              <Condition/>
+            </Route>
+            <Route path='/frag'>
+              <Frag />
+            </Route>
+            <Route path='/list'>
+              <List />
+            </Route>
+            <Route path='/parentmark'>
+              <ParentMark />
+            </Route>
+            <Route path='/head'>
+              <Head />
+            </Route>
+            <Route path='/refeparent'>
+              <Refparent />
+            </Route>
+            <Route path='/frparent'>
+              <FRparent />
+            </Route>
+            <Route path='/todo'>
+              <Todo />
+            </Route>
+            <Route path='/mytask'>
+              <Mytask />
+            </Route>
+            <Route path='/click'>
+              <Click name='vijay' />
+            </Route>
+            <Route path='/calc'>
+              <Calculator />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      // </Suspense>
 
-      // <Router>
-      //   <div>
-      //     <ul>
-      //       <li>
-      //         <Link to='/'>Home</Link>
-      //       </li>
-      //       <li>
-      //         <Link to='/profile'>Profile</Link>
-      //       </li>
-      //     </ul>
-      //     <hr />
-      //     <Route path='/profile'>
-      //       <Profile />
-      //     </Route>
-      //   <Switch>
-      //     <Route  exact path='/'>
-      //       <Home />
-      //     </Route>
-
-      //     <Route path='/dashboard'>
-      //       <Dashboard />
-      //     </Route>
-
-      //   </Switch>
-      //   </div>
-      // </Router>
-      //  </Suspense>
-      <div>
-        {/* <Timer name="Timer" />
-        <State />
-        <Derived />
-        <Test1 />
-        <Test2 />
-        <Parent />
-        <BtnPresent />
-        <Condition />
-        <Frag />
-        <List />
-        <ParentMark />
-        <Click name="vijay" />
-        <Head />
-        <Refparent />
-        <FRparent /> */}
-        <Mytask />
-      </div>
     )
   }
 }

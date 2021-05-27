@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Mytask extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             fname: '',
@@ -10,17 +10,16 @@ class Mytask extends Component {
             names: []
         }
     }
-    handleChange = (evt)=> {
-        const value = evt.target.value
+    handleChange = (evt) => {
         this.setState({
-            [evt.target.name]: value
+            [evt.target.name]: evt.target.value
         })
     }
     emailCheck = (value) => {
         let exist = true
         this.state.names.map(name => {
-            console.log(name,value)
-            if(name.value2 === value){
+            // console.log(name,value)
+            if (name.Email === value) {
                 exist = false
                 // console.log(count)
             }
@@ -30,33 +29,33 @@ class Mytask extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let value = this.state.fname
-        let value1 = this.state.lname
-        let value2 =this.state.email
-        const obj = { id: Date.now(), value, value1,value2 };
-        if(this.emailCheck(value2)){
+        const Firstname = this.state.fname
+        const Lastname = this.state.lname
+        const Email = this.state.email
+        const obj = { id: Date.now(), Firstname, Lastname, Email };
+        if (this.emailCheck(Email)) {
             // console.log(this.emailCheck(value2))
-                this.setState({
+            this.setState({
                 names: [obj, ...this.state.names],
                 fname: '',
                 lname: '',
                 email: '',
-    
+
             });
-        }else{
+        } else {
             alert("email already exist")
         }
-        
+
     }
     renderTable() {
         return (
             this.state.names.map((name) => {
-                const { id, value, value1,value2 } = name; //destructuring
+                const { id, Firstname, Lastname, Email } = name; //destructuring
                 return (
                     <tr key={id}>
-                        <td>{value}</td>
-                        <td> {value1}</td>
-                        <td>{value2}</td>
+                        <td>{Firstname}</td>
+                        <td> {Lastname}</td>
+                        <td>{Email}</td>
                     </tr>
                 );
             })
@@ -68,13 +67,13 @@ class Mytask extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         FirstName :
-                        <input type = 'text' onChange={this.handleChange} name = 'fname' value ={this.state.fname} /><br />
+                        <input type='text' onChange={this.handleChange} name='fname' value={this.state.fname} /><br />
                         LastName :
-                        <input type = 'text' onChange={this.handleChange} name = 'lname' value= {this.state.lname} /><br />
+                        <input type='text' onChange={this.handleChange} name='lname' value={this.state.lname} /><br />
                         E-Mail :
-                        <input type = 'text' onChange={this.handleChange} name = 'email' value= {this.state.email} /><br />
+                        <input type='text' onChange={this.handleChange} name='email' value={this.state.email} /><br />
                     </label>
-                    <input type="submit"  value="Submit" />
+                    <input type="submit" value="Submit" />
                 </form>
 
                 <br />

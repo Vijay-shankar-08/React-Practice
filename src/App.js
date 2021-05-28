@@ -21,6 +21,7 @@ import Refparent from './components/Refparent'
 import Mytask from './components/Mytask'
 import Todo from './components/Todo'
 import Calculator from './components/Calculator';
+import NextCalculator from './components/NextCalculator'
 
 // const Profile = lazy(() => import('./components/Profile'))
 // const Dashboard = lazy(() => import('./components/Dasboard'))
@@ -41,13 +42,11 @@ class App extends Component {
           <hr />
           <Switch>
             <Route path='/dashboard' component={Dashboard}></Route>
-            <Route  exact path='/'>
-              <Home />
-            </Route>
+            
             <Route path='/profile'>
               <Profile />
             </Route>
-            <Route path='/timer'>
+          <Route path='/timer'>
               <Timer name="Timer" />
             </Route>
             <Route path='/state'>
@@ -58,7 +57,7 @@ class App extends Component {
             </Route>
             <Route path='/test1'>
               <Test1 />
-            </Route>
+            </Route>  
             <Route path='/test2'>
               <Test2 />
             </Route>
@@ -100,6 +99,12 @@ class App extends Component {
             </Route>
             <Route path='/calc'>
               <Calculator />
+            </Route>
+            <Route  path='/bigcalc'>
+              <NextCalculator />
+            </Route>
+            <Route  path='/'>
+              <Home />
             </Route>
           </Switch>
         </div>

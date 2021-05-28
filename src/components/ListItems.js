@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ListItems.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -26,5 +27,19 @@ function ListItems(props) {
     )
 
 }
+
+ListItems.prototype = {
+    setUpdate: PropTypes.func.isRequired,
+    deleteItem: PropTypes.func.isRequired,
+    items: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string,
+        ])
+    ),
+
+}
+
+
 
 export default ListItems;

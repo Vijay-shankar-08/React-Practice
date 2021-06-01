@@ -5,7 +5,10 @@ function NextCalculator() {
   const [result, setResult] = useState("");
   const inputRef = useRef(null);
 
-//   useEffect(() => inputRef.current.focus());
+  useEffect(() => inputRef.current.focus());
+    // useEffect(()=>{
+    //     handleClick()
+    // },[result>2])
 
   function handleClick(e) {
     setResult(result.concat(e.target.name));

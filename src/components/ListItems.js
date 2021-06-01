@@ -31,14 +31,16 @@ function ListItems(props) {
 ListItems.prototype = {
     setUpdate: PropTypes.func.isRequired,
     deleteItem: PropTypes.func.isRequired,
-    items: PropTypes.arrayOf(
-        PropTypes.oneOfType([
-            PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.oneOfType([
             PropTypes.string,
-        ])
-    ),
-
+            PropTypes.number
+          ]),
+        text:PropTypes.string,
+    })).isRequired,
 }
+
+
 
 
 

@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import App1 from './App1'
+import App1 from './App1';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import allReducers from './reducers/index'
 import {Provider} from 'react-redux'
+// import ReduxThunk from 'redux-thunk'
+// const  middleware = [ReduxThunk]
 
 const myStore = createStore(
   allReducers, 
@@ -14,11 +16,13 @@ const myStore = createStore(
   )
 
 ReactDOM.render(
+
   <Provider store = {myStore}>
+  <React.StrictMode>
     <App1 />
-  </Provider>,
-    // <App />,
- 
+    {/* <App /> */}
+  </React.StrictMode>,
+   </Provider>, 
   document.getElementById('root')
 );
 

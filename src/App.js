@@ -25,7 +25,8 @@ import NextCalculator from './components/NextCalculator'
 import Hook from './components/Hooks'
 import ComponentA from './components/ComponentA'
 import Hook1 from './components/Hook1'
-import {useSelector} from 'react-redux'
+import Types from './components/Types'
+
 
 // const Profile = lazy(() => import('./components/Profile'))
 // const Dashboard = lazy(() => import('./components/Dasboard'))
@@ -115,6 +116,9 @@ class App extends Component {
             </Route>
             <Route  path='/context'>
               <ComponentA />
+            </Route>
+            <Route  path='/types'>
+              <Types />
             </Route>
             <Route  path='/'>
               <Home />

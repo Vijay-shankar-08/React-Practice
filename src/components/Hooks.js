@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 
 function Hook() {
     const [state1, setState1] = useState('')
+    const [state2, setState2] = useState('')
     console.log("render")
 
     useEffect(() => {
@@ -20,7 +21,7 @@ function Hook() {
         // componentWillUnmount() {
         //     console.log("Component unmounted!");
         //   }
-    }, [state1])
+    },[state1,state2])
     // componentDidUpdate(prevProps) {
     //     if (this.props.name !== prevProps.name) {
     //       console.log("Name has changed!");
@@ -32,8 +33,10 @@ function Hook() {
                 <button onClick={() => setState1('post')}>post</button>
                 <button onClick={() => setState1('comment')}>comment</button>
                 <button onClick={() => setState1('user')}>user</button>
+                <button onClick={() => setState2('like')}>likes</button>
+                
             </div>
-            <h1>{state1}</h1>
+            <h1>{state1}{state2}</h1>
 
         </>
     )

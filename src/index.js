@@ -21,8 +21,8 @@ ReactDOM.render(
   <React.StrictMode>
     <App1 />
     {/* <App /> */}
-  </React.StrictMode>,
-   </Provider>, 
+  </React.StrictMode>
+   </Provider>,  
   document.getElementById('root')
 );
 

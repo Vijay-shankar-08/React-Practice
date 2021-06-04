@@ -26,6 +26,7 @@ import Hook from './components/Hooks'
 import ComponentA from './components/ComponentA'
 import Hook1 from './components/Hook1'
 import Types from './components/Types'
+import Form from './components/Form'
 
 
 // const Profile = lazy(() => import('./components/Profile'))
@@ -119,6 +120,9 @@ class App extends Component {
             </Route>
             <Route  path='/types'>
               <Types />
+            </Route>
+            <Route  path='/forms'>
+              <Form />
             </Route>
             <Route  path='/'>
               <Home />

@@ -1,5 +1,8 @@
-import React, { Component, lazy, Suspense } from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Provider } from 'react-redux'
+// import store from './redux/store'
+import store from './store'
 import Timer from './components/Timer';
 import State from './components/State';
 import Derived from './components/Derived';
@@ -27,6 +30,16 @@ import ComponentA from './components/ComponentA'
 import Hook1 from './components/Hook1'
 import Types from './components/Types'
 import Form from './components/Form'
+import Dynamic from './components/Dynamic'
+import TestApi from './components/TestApi'
+import DynamicField from './components/DynamicField';
+import CakeContainer from './components/CakeContainer';
+import IceCreamContainer from './components/iceCreamContainer';
+import ItemContainer from './components/ItemContainer'
+import Post from './components/Post'
+import Badminton from './components/Badminton'
+
+
 
 
 // const Profile = lazy(() => import('./components/Profile'))
@@ -36,6 +49,7 @@ class App extends Component {
     return (
       // <Suspense fallback={<h2>loading....</h2>}>
       <Router>
+        <Provider store = {store}>
         <div>
           <ul>
             <li>
@@ -124,14 +138,39 @@ class App extends Component {
             <Route  path='/forms'>
               <Form />
             </Route>
+            <Route  path='/dynamic'>
+              <Dynamic />
+            </Route>
+            <Route  path='/testapi'>
+              <TestApi />
+            </Route>
+            <Route  path='/dynamicfield'>
+              <DynamicField />
+              
+            </Route>
+           
+            <Route  path='/cakeandice'>
+              <ItemContainer iceCream />
+              <CakeContainer />
+              <IceCreamContainer />
+            </Route>
+            {/* <Route  path='/icecream'>
+              <IceCreamContainer />
+            </Route> */}
+            <Route  path='/badminton'>
+              <Badminton />
+            </Route>
+            <Route  path='/post'>
+              <Post />
+            </Route>
+            
             <Route  path='/'>
               <Home />
             </Route>
           </Switch>
         </div>
+        </Provider>
       </Router>
-      // </Suspense>
-
     )
   }
 }

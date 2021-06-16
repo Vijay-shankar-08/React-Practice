@@ -1,7 +1,14 @@
+import { useState } from 'react'
 import { connect } from 'react-redux';
 import  { incrementCount }  from '../actions/PostActions'
 import { getActivePosts } from '../selectors/PostSelector'
+import SinglePost from './SinglePost';
 function Post(props) {
+    const[postId,setPostId]= useState('')
+
+    function onPostClick(id){
+        setPostId(id);
+    }
     return (
         <div><center>
             <h2>Posts List</h2>
@@ -12,9 +19,17 @@ function Post(props) {
             <div>
                 {props.posts.map((post) => (
                     <div
-                        key={post.title}>{post.title}
+                        key={post.id} onClick={()=> onPostClick(post.id)}>{post.title}
                     </div>
                 ))}
+            </div>
+
+            <div>
+                {postId && (<div>
+                    <SinglePost id='1' />
+                    <SinglePost id='2' />
+                </div> 
+                )}                                                      
             </div>
             </center>
         </div>

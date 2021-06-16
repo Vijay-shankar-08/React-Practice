@@ -37,6 +37,7 @@ import CakeContainer from './components/CakeContainer';
 import IceCreamContainer from './components/iceCreamContainer';
 import ItemContainer from './components/ItemContainer'
 import Post from './components/Post'
+import PostTwo from './components/PostTwo'
 import Badminton from './components/Badminton'
 
 
@@ -162,6 +163,9 @@ class App extends Component {
             </Route>
             <Route  path='/post'>
               <Post />
+            </Route>
+            <Route  exact path='/posttwo'>
+              <PostTwo />
             </Route>
             
             <Route  path='/'>

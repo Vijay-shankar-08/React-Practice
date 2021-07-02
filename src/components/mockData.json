@@ -1,0 +1,92 @@
+{
+    "data":[
+      {
+        "question":{
+          "name":"What Kind of Services are you Seeking?",
+          "slug":"services_seeking"
+        },
+        "answer":{
+          "slug":"buy_sell",
+          "name":"B2B Payments",
+          "question_id":1
+        }
+      },
+      {
+        "question":{
+          "name":"Estimated number of transactions in FIAT",
+          "slug":"estimate FIAT"
+        },
+        "answer":{
+          "slug":"estimate FIAT",
+          "name":"$50",
+          "question_id":2
+        }
+      },
+      {
+        "question":{
+          "name":"Estimated number of transactions in Crypto",
+          "slug":"estimate in crypto"
+        },
+        "answer":{
+          "slug":"buy_sell Crypto",
+          "name":"$50.000.00 - $250.000.00",
+          "question_id":3
+        }
+      },
+      {
+        "question":{
+          "name":"Occupation",
+          "slug":"occupation_details"
+        },
+        "answer":{
+          "slug":"occupation detail",
+          "name":"Designer",
+          "question_id":4
+        }
+      },
+      {
+        "question":{
+          "name":"To Operate With",
+          "slug":"operate_with"
+        },
+        "answer":{
+          "slug":"operate_usd",
+          "name":"United State Dollors",
+          "question_id":5
+        }
+      },
+      {
+        "question":{
+          "name":"Estimated number of transactions in FIAT",
+          "slug":"estimate FIAT"
+        },
+        "answer":{
+          "slug":"estimate FIAT",
+          "name":"$50",
+          "question_id":6
+        }
+      },
+      {
+        "question":{
+          "name":"Estimated number of transactions in Crypto",
+          "slug":"estimate in crypto"
+        },
+        "answer":{
+          "slug":"buy_sell Crypto",
+          "name":"$50.000.00 - $250.000.00",
+          "question_id":7
+        }
+      },
+      {
+        "question":{
+          "name":"Occupation",
+          "slug":"occupation_details"
+        },
+        "answer":{
+          "slug":"occupation detail",
+          "name":"Bussiness Internal Brand",
+          "question_id":8
+        }
+      }
+    ]
+  }

@@ -8814,6 +8814,11 @@
   "resolved" "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
   "version" "0.3.0"
 
+"memo@^1.0.1":
+  "integrity" "sha512-fm6jIx2UgihPOiQqKzi+LBl5HT0I7kLyhmDu7zZvdEbmH83lTWOjLW3ef7RoWwgxMpgEYwsyHr+S03QcnFUsfQ=="
+  "resolved" "https://registry.npmjs.org/memo/-/memo-1.0.1.tgz"
+  "version" "1.0.1"
+
 "memory-fs@^0.4.1":
   "integrity" "sha1-OpoguEYlI+RHz7x+i7gO1me/xVI="
   "resolved" "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.1.tgz"
@@ -11217,6 +11222,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
 
+"react-memo@^0.3.1":
+  "integrity" "sha1-WkCul3OjpvQ0S54vTj64Bz4Dlr8="
+  "resolved" "https://registry.npmjs.org/react-memo/-/react-memo-0.3.1.tgz"
+  "version" "0.3.1"
+
 "react-plotly.js@^2.5.1":
   "integrity" "sha512-Oya14whSHvPsYXdI0nHOGs1pZhMzV2edV7HAW1xFHD58Y73m/LbG2Encvyz1tztL0vfjph0JNhiwO8cGBJnlhg=="
   "resolved" "https://registry.npmjs.org/react-plotly.js/-/react-plotly.js-2.5.1.tgz"
@@ -11336,7 +11346,7 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>=15", "react@>=16.8.0", "react@>=16.x", "react@>0.13.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>=0.4.0", "react@>=15", "react@>=16.8.0", "react@>=16.x", "react@>0.13.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

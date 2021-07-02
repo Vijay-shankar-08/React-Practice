@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{ useState } from 'react';
 
 
 function Dynamic() {
@@ -25,12 +25,12 @@ function Dynamic() {
       <div>
         <h1>Add New Member</h1>
         <form  onSubmit={handleSubmit}>
-        { inputFields.map((inputField,index) => (
-          <div key={index}>
+        {inputFields.map((inputField,index) => (
+          <React.Fragment key={index}>
             <input type='text' name="firstName" value={inputField.firstName} onChange={(event)=>handleChangeInput(event,index)}/>
             <input type='text' name="lastName" value={inputField.lastName} onChange={(event)=>handleChangeInput(event,index)}/>
             <button type='button' onClick={() => handleAddFields()}>Add</button>
-          </div>
+         </React.Fragment>
         )) }
         <button type='submit'>Submit</button>
       </form>

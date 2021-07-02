@@ -1,7 +1,14 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers  } from 'redux'
 import  PostsReducer  from './reducers/PostsReducer'
+// import ScoreReducer from './reducers/ScoreReducer'
 
 
-const store = createStore(PostsReducer);
+const rootReducer = combineReducers({
+    Posts:PostsReducer
+    // Score:ScoreReducer 
+  })
+
+
+const store = createStore(rootReducer);
 
 export default store

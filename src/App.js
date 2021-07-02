@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from 'react-redux'
 // import store from './redux/store'
 import store from './store'
@@ -38,7 +38,15 @@ import IceCreamContainer from './components/iceCreamContainer';
 import ItemContainer from './components/ItemContainer'
 import Post from './components/Post'
 import PostTwo from './components/PostTwo'
-import Badminton from './components/Badminton'
+import Badminton from './components/Badminton/Badminton'
+import Cparent from './components/Cparent'
+import Mparent from './components/Mparent'
+import Button from './components/Button/Button'
+import Search from './components/Search/Search'
+import Split from './components/Split'
+import Counter from './components/Counter'
+import Display from './components/Display';
+import Fun from './components/Fun';
 
 
 
@@ -52,7 +60,7 @@ class App extends Component {
       <Router>
         <Provider store = {store}>
         <div>
-          <ul>
+          {/* <ul>
             <li>
               <Link to='/'>Home</Link>
             </li>
@@ -60,7 +68,7 @@ class App extends Component {
               <Link to='/profile'>Profile</Link>
             </li>
           </ul>
-          <hr />
+          <hr /> */}
           <Switch>
             <Route path='/dashboard' component={Dashboard}></Route>
             
@@ -167,7 +175,32 @@ class App extends Component {
             <Route  exact path='/posttwo'>
               <PostTwo />
             </Route>
-            
+            <Route  path='/Cparent'>
+              <Cparent />
+            </Route>
+            <Route  path='/Mparent'>
+              <Mparent />
+            </Route>
+            <Route  path='/test'>
+              <Button />
+              <Search />
+            </Route>
+            <Route  path='/split'>
+              <Split />
+            </Route>
+            <Route  path='/usecallback'>
+              <Display/>
+            </Route>
+            <Route  path='/fun'>
+              <Fun />
+            </Route>
+            <Route  path='/usememo'>
+              <Counter />
+              <Display/>
+            </Route>
+            <Route  path='/usecm'>
+              <Counter />
+            </Route>
             <Route  path='/'>
               <Home />
             </Route>

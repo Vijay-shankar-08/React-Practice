@@ -4,30 +4,92 @@ class Badminton extends Component {
     constructor(props){
         super(props)
         this.state ={
+            totalRounds:0,
+            player:'',
             playerOnePoints:0,
-            playerTwoPoints:0
+            playerTwoPoints:0,
+            setsWon:0,
+            playerOneWins:0,
+            playerTwoWins:0,
+            totalPoints: 21,
+            setsCompleted:0,
+            details:[]
         }
     }
-    handleChange = (evt) => {
-        if(this.state.playerOnePoints < 21 || this.state.playerTwoPoints < 21){
+    handleRound = (evt) => {
+        this.setState({
+            totalRounds: evt.target.value
+        })
+    }
+
+    handlePlayers = (evt) => {
+        this.setState({
+            player: evt.target.value
+        })
+    }
+
+    handleUpdate = (evt) => {
+        console.log(evt.target.value)
+        if(this.state.player === "playerOne" && evt.target.value <= this.state.totalPoints){
             this.setState({
-                [evt.target.name]:this.state.evt.name+1
+                playerOnePoints: evt.target.value
+            })
+        }else if(evt.target.value <= this.state.totalPoints){
+            this.setState({
+                playerTwoPoints: evt.target.value
             })
         }
-        
     }
+    handleSubmit = (evt) =>{
+        evt.preventDefault();
+        const totalSets = this.state.totalRounds;
+        const completedSets = this.state.setsCompleted;
+        const winDifference = (totalSets / 2) + 1;
+        if(this.state.playerOnePoints === 21){
+            this.setState({
+                playerOneWins:this.state.playerOneWins + 1,
+                setsCompleted:this.state.setsCompleted + 1
+            })
+        }else{
+            this.setState({
+                playerTwoWins:this.state.playerTwoWins + 1,
+                setsCompleted:this.state.setsCompleted + 1
+            })
+        }
+        if(completedSets === totalSets){
+            if(this.state.playerOneWins >= winDifference){
+               let  difference = (this.state.playerOneWins - this.state.playerTwoWins)
+                return{
+                    difference
+                }
+            }else if (this.state.playerTwoWins >= winDifference){
+                let  difference = (this.state.playerTwoWins - this.state.playerOneWins)
+                 return{
+                     difference
+                }
+            }
+        }
+    }
+
     render() {
         return (
             <div>
                 <center><h1>Score Board</h1></center>
-                <h1>Sets Completed: </h1> 
-                <h2>Player 1:{this.state.playerOnePoints}</h2>  <h1>sets won:{this.state.setsWonByPlayer1}</h1>
-                <button type='button' name = 'playerOnePoints' onClick={this.handleChange}>+</button>  
-                <h2>Player 2:{this.state.playerTwoPoints}</h2>  <h1>sets won:{this.state.setsWonByPlayer2}</h1>
-                <button type='button' name = 'playerTwoPoints'  onClick={this.handleChange}>+</button> 
-                <div>
-                    {(this.state.setsWonByPlayer1>this.state.setsWonByPlayer2)? <h1>player 1 won the match tonight</h1> : <h1>player 2 won the match  tonigh</h1>}
-                </div>
+                <form onSubmit = {this.handleSubmit}>
+                    Enter Total Round:<input type='text' value={this.state.totalRounds} onChnage={this.handleRound}></input> <br />
+                    Select Player<select value={this.state.player} onChange={this.handlePlayers}>
+                      <option value="playerOne">Player 1</option>
+                      <option value="playerTwo">Player 2</option>
+                    </select>
+                    Ponits:<input type='text'></input><br />
+                    <button type='button' onClick={this.handleUpdate}>Update</button>
+                    <button type='submit'>Submit</button>
+                </form>
+               
+                <p>Sets Completed:{this.state.setsCompleted} </p>
+                <p>
+                    {this.state.playerOneWins}
+                </p>
 
             </div>
         )

@@ -4,7 +4,7 @@ export const getPosts = (state) => state.posts;
 export const getFilter = (state)=> state.filter;
 export const getCount = (state)=> state.count;
 export const getPostById = (state,props)=> 
-    state.posts.find((post)=> post.id == props.id);
+    state.posts.find((post)=> post.id === props.id);
 
 export const getPost = () =>{
     createSelector([getPostById],(post) =>{

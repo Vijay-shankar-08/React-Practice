@@ -23,15 +23,17 @@ function WinningComponent({ scores }) {
       }
     }
   }
-  let total= Object.entries(scores).map(([key, value]) => {
-    return(
-        {[key]:value}
-    )
-  })
+  function sumValues(value){
+    let total =0
+    for (let num of value){
+      total = total + num
+    }
+    return total
+  }
+  
   console.log(max);
   console.log(sum);
   console.log(keys);
-  console.log(total);
   return (
     <>
       <div>
@@ -42,20 +44,34 @@ function WinningComponent({ scores }) {
         )}
       </div>
       <div>
-      {keys.map((item,index) =>{
-        return(
-          <div key={index}>
-            PLAYER:{item}
-          </div>
-        )
+      {Object.entries(scores).map(([key, value]) => {
+          return(
+              <div><h1>{key}:[{value.join(',')}]</h1><br/>
+              <h1>total:{sumValues(value)}</h1>
+              </div>
+              
+          )
       })}
-      {sum.map((item,index) =>{
-        return(
-          <div key={index}>
-            POINT:{item}
-          </div>
-        )
-      })}
+      {/* <table>
+          <tbody>
+              <tr>
+                  <th>Player</th>
+                  <th>Points</th>
+              </tr>
+              {/* Render dynamic rows*/}
+              {/* {total.map(item => {
+                item.map((detail,index) => {
+                  return(
+                    <tr key={index}>
+                        <td>{detail.key}</td>
+                        <td> {detail.value}</td>
+                        
+                    </tr>
+                  )
+                })
+              })}
+          </tbody>
+      </table> */} */
       </div>
     </>
   );

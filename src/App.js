@@ -47,6 +47,8 @@ import Split from './components/Split'
 import Counter from './components/Counter'
 import Display from './components/Display';
 import Fun from './components/Fun';
+import MemoDisplay from './components/MemoDispaly'
+import StoryBook from './components/storyBook/StoryBook'
 
 
 
@@ -194,12 +196,14 @@ class App extends Component {
             <Route  path='/fun'>
               <Fun />
             </Route>
-            <Route  path='/usememo'>
-              <Counter />
-              <Display/>
+            <Route  path='/usehook'>
+              <MemoDisplay />
             </Route>
             <Route  path='/usecm'>
               <Counter />
+            </Route>
+            <Route  path='/story'>
+              <StoryBook />
             </Route>
             <Route  path='/'>
               <Home />

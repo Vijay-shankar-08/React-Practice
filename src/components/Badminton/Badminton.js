@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import WinningComponent from './WinningComponent'
 
 class Badminton extends Component {
     constructor(props){
@@ -7,14 +8,13 @@ class Badminton extends Component {
             totalRounds:'',
             numberOfPlayers:'',
             currentRound:0,
-            player: '',
+            player: 'player',
             point:'',
-            scores:[],
-            detials:[],
-            playersList: ['playerOne','playerTwo','playerThree','playerFour','playerFive'],
-            options: []
+            options:[],
+            scores:{},
         }
     }
+    
 
     handleRoundsChange = (evt) => {
         this.setState({
@@ -25,74 +25,84 @@ class Badminton extends Component {
         this.setState({
             numberOfPlayers:evt.target.value
         })
-        for( let i=0; i< evt.target.value; i++){
-            this.state.options.push(this.state.playersList[i])
-       }
+        for( let i= 1; i<= evt.target.value; i++){
+            // this.state.options.push(this.state.playersList[i])
+                this.setState((prevState) => ({
+                    scores:{...prevState.scores,
+                        ["player" + i]: []
+                    }
+                }))   
+            
+            this.setState(prevState => ({
+                options:[...prevState.options,
+                    "player" + i
+                ]
+            }))
+        }
+    }
+
+    handlePlayerChange = (evt) => {
+        this.setState({
+            player: evt.target.value
+        })
     }
 
     handlePlayersPoint = (evt) => {
         this.setState({
-            points:evt.target.value
+            point:evt.target.value
         })
     }
 
     handlePointsChange = () => {
-        
-        let points = this.state.points
-        let obj = { points }
-        this.setState({
-            scores:[obj, ...this.state.scores]
+        let players = this.state.player
+        let points = this.state.point
+        let scores = this.state.scores
+        Object.entries(scores).map(([key, value]) => {
+            key === players && 
+                this.setState(prevState => ({
+                    scores:{...prevState.scores,
+                    [key]:[
+                        ...prevState.scores[key],
+                        Number(points)
+                    ]}
+                }))
         })
-        // target arr = [
-        //     {playerOne:
-        //         {
-        //         roundOne: 20,
-        //         roundTwo:22
-        //         }
-        //     },
-        //     playeTwo:
-        //     {
-        //         roundOne: 19,
-        //         roundTwo: 22
-        //     }
-        // ]
-    }
-
-    handleSubmit = (evt) => {
-        evt.preventDefault();
-    }
-
+     }
+    
     handlePageChange = (evt) => {
         evt.preventDefault();
-        // let current = this.state.currentRound
         this.setState({
             currentRound: this.state.currentRound + 1
          })
-        
     }
-
     render() {
-        console.log(this.state.numberOfPlayers)
         console.log(this.state.totalRounds)
-        console.log("eeeee",this.state.options)
-        console.log("dhhdh",this.state.scores)
+        console.log(this.state.numberOfPlayers)
+        console.log(this.state.player)
+        console.log("scores=",this.state.scores)
+        console.log("options=",this.state.options)
+        // let list = this.state.scores
+        // let options1 = list.map(item => {
+        //     return(
+        //         Object.keys(item)
+        //     )
+        // })
         return(
             <div>
                 <div>
                     {this.state.currentRound && this.state.currentRound <= this.state.totalRounds ? 
                     <div><center><h1>Round{this.state.currentRound}</h1></center>
-                    Select Player<select>
-                    {this.state.options.map(item =>{
-                        return(
-                            <option >{item}</option>
-                        )
-                    })} 
+                    Select Player
+                    <select name="player" value={this.state.player} onChange={this.handlePlayerChange}>
+                        {this.state.options.map((item) => {
+                            return <option key={item} value={item}>{item}</option>;
+                        })}
                     </select>
                     Enter Ponits:<input type='text' onChange={this.handlePlayersPoint}></input><br />
                     <button type='button' onClick={this.handlePointsChange}>ADD</button>
                     </div> : this.state.currentRound > this.state.totalRounds ? 
                     <div>
-                        <h1>Winning Page</h1>
+                        <WinningComponent scores={this.state.scores} /> 
                     </div> :
                         <div>
                             Enter total Round <input type='text' value={this.state.totalRounds}  name = 'totalRounds' onChange={this.handleRoundsChange}></input>
@@ -100,7 +110,10 @@ class Badminton extends Component {
                         </div>
                     }
                 </div>
-               <div><button type='button' onClick={this.handlePageChange}>Next</button></div> 
+               <div>{ this.state.currentRound <= this.state.totalRounds ?
+                <button type='button' onClick={this.handlePageChange}>Next</button> : null
+               } 
+               </div>
             </div>
         )
     }

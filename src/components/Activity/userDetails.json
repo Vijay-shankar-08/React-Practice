@@ -1,0 +1,14 @@
+{
+    "list":[
+        {
+            "name":"Vijayashankar",
+            "userId":1,
+            "activity":["painting","playing"]
+        },
+        {
+            "name":"Santhosh",
+            "userId":2,
+            "activity":["writting","singing"]
+        }
+    ]
+}

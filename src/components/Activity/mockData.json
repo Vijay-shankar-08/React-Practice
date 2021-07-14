@@ -1,0 +1,29 @@
+{
+    "list":[
+        {
+            "activity":"painting",
+            "id":1,
+            "label":"Painting"
+        },
+        {
+            "activity":"singing",
+            "id":2,
+            "label":"Singing"
+        },
+        {
+            "activity":"writting",
+            "id":3,
+            "label":"Writting"
+        },
+        {
+            "activity":"playing",
+            "id":4,
+            "label":"Playing"
+        },
+        {
+            "activity":"reading",
+            "id":5,
+            "label":"Reading"
+        }
+    ]
+}

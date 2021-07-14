@@ -49,7 +49,7 @@ import Display from './components/Display';
 import Fun from './components/Fun';
 import MemoDisplay from './components/MemoDispaly'
 import StoryBook from './components/storyBook/StoryBook'
-import ActivityComponent from './components/Activity/ActivityComponent';
+import ActivityComponentNext from './components/Activity/ActivityComponentNext';
 
 
 
@@ -206,7 +206,7 @@ class App extends Component {
               <StoryBook />
             </Route>
             <Route  path='/activity'>
-              <ActivityComponent />
+              <ActivityComponentNext />
             </Route>
             <Route  path='/'>
               <Home />

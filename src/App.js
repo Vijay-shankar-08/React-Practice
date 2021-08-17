@@ -50,8 +50,7 @@ import Fun from './components/Fun';
 import MemoDisplay from './components/MemoDispaly'
 import StoryBook from './components/storyBook/StoryBook'
 import ActivityComponentNext from './components/Activity/ActivityComponentNext';
-
-
+import MyCounter from './components/MyCounter/index';
 
 // const Profile = lazy(() => import('./components/Profile'))
 // const Dashboard = lazy(() => import('./components/Dasboard'))
@@ -145,6 +144,9 @@ class App extends Component {
             </Route>
             <Route  path='/types'>
               <Types />
+            </Route>
+            <Route  path='/myCounter'>
+              <MyCounter />
             </Route>
             <Route  path='/forms'>
               <Form />

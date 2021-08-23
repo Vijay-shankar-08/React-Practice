@@ -17,7 +17,7 @@ class Mytask extends Component {
     }
     emailCheck = (value) => {
         let exist = true
-        this.state.names.map(name => {
+        this.state.names.forEach((name) => {
             // console.log(name,value)
             if (name.Email === value) {
                 exist = false

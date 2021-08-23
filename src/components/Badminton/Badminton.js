@@ -57,7 +57,7 @@ class Badminton extends Component {
         let players = this.state.player
         let points = this.state.point
         let scores = this.state.scores
-        Object.entries(scores).map(([key, value]) => {
+        Object.entries(scores).forEach(([key, value]) => {
             key === players && 
                 this.setState(prevState => ({
                     scores:{...prevState.scores,

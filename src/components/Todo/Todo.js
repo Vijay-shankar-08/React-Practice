@@ -1,6 +1,6 @@
 import React from 'react';
 import './Todo.css';
-import ListItems from './ListItems'
+import ListItems from './List/ListItems'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -66,13 +66,16 @@ class Todo extends React.Component {
     return (
       <div className="Todo">
         <header>
-          <form id="to-do-form" onSubmit={this.addItem}>
+          <form id="to-do-form" onSubmit={this.addItem} aria-label={'todo-form'}>
             <input type="text" placeholder="Enter task" value={this.state.currentItem.text} onChange={this.handleInput}></input>
             <button type="submit">Add</button>
           </form>
           {/* <p>{this.state.items.text}</p> */}
         </header>
+        
         <ListItems items={this.state.items} deleteItem={this.deleteItem} setUpdate={this.setUpdate} />
+        {console.log(this.state.items)}
+        {console.log(this.state.currentItem)}
       </div>
     );
   }

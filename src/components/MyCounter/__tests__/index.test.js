@@ -88,10 +88,8 @@ describe("Testing MyCounter", () => {
     })
 
     it("should render the favorite color", () => {
-         const { getByLabelText ,getAllByText } = render(<Counter />)
-         fireEvent.click(getByLabelText("Red"));
-         fireEvent.click(getByLabelText("Green"));
-         expect(getAllByText("Your favorite color is Green")).toBeTruthy()
-       })
-
+        expect(getByLabelText('select-output').textContent).toBe('Your favorite color is red')
+        fireEvent.change(getByLabelText('select'),{ target: { value: 'green'}})
+        expect(getByLabelText('select-output').textContent).toBe('Your favorite color is green')
+    })
 })

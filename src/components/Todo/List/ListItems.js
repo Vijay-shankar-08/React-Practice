@@ -9,12 +9,12 @@ function ListItems(props) {
     const listItems = items.map(item => {
         return <div className="list" key={item.key}>
             <p>
-                <input type="text" id={item.key} value={item.text} onChange={(e) => {
+                <input type="text" id={item.key} aria-label="edit" value={item.text} onChange={(e) => {
                     props.setUpdate(e.target.value, item.key)
                 }} />
                 <span>
 
-                    <FontAwesomeIcon className="icons" onClick={() => {
+                    <FontAwesomeIcon className="icons" id="delete" onClick={() => {
                         props.deleteItem(item.key)
                     }} icon="trash" />
                 </span>

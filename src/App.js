@@ -22,7 +22,7 @@ import Dashboard from './components/Dasboard'
 import Home from './components/Home'
 import Refparent from './components/Refparent'
 import Mytask from './components/Mytask'
-import Todo from './components/Todo'
+import Todo from './components/Todo/Todo.js'
 import Calculator from './components/Calculator';
 import NextCalculator from './components/NextCalculator'
 import Hook from './components/Hooks'
@@ -42,7 +42,6 @@ import Badminton from './components/Badminton/Badminton'
 import Cparent from './components/Cparent'
 import Mparent from './components/Mparent'
 import Button from './components/Button/Button'
-import Search from './components/Search/Search'
 import Split from './components/Split'
 import Counter from './components/Counter'
 import Display from './components/Display';
@@ -51,6 +50,9 @@ import MemoDisplay from './components/MemoDispaly'
 import StoryBook from './components/storyBook/StoryBook'
 import ActivityComponentNext from './components/Activity/ActivityComponentNext';
 import MyCounter from './components/MyCounter/index';
+import MyForm from './components/MyForm/index';
+import Sample from './components/sampleTwo';
+import TestForm from './components/Testing/index'
 
 // const Profile = lazy(() => import('./components/Profile'))
 // const Dashboard = lazy(() => import('./components/Dasboard'))
@@ -90,6 +92,12 @@ class App extends Component {
             </Route>  
             <Route path='/test2'>
               <Test2 />
+            </Route>
+            <Route path='/testform'>
+              <TestForm />
+            </Route>
+            <Route path='/sample'>
+              <Sample />
             </Route>
             <Route path='/parent'>
               <Parent />
@@ -148,6 +156,9 @@ class App extends Component {
             <Route  path='/myCounter'>
               <MyCounter />
             </Route>
+            <Route  path='/myform'>
+              <MyForm />
+            </Route>
             <Route  path='/forms'>
               <Form />
             </Route>
@@ -187,7 +198,6 @@ class App extends Component {
             </Route>
             <Route  path='/test'>
               <Button />
-              <Search />
             </Route>
             <Route  path='/split'>
               <Split />

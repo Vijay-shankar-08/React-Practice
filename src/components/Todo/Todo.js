@@ -66,11 +66,11 @@ class Todo extends React.Component {
     return (
       <div className="Todo">
         <header>
-          <form id="to-do-form" onSubmit={this.addItem} aria-label={'todo-form'}>
-            <input type="text" placeholder="Enter task" value={this.state.currentItem.text} onChange={this.handleInput}></input>
+          <form id="to-do-form" onSubmit={this.addItem} aria-label='todo-form'>
+            <input type="text" placeholder="Enter task" aria-label="taskValue" value={this.state.currentItem.text} onChange={this.handleInput}></input>
             <button type="submit">Add</button>
           </form>
-          {/* <p>{this.state.items.text}</p> */}
+
         </header>
         
         <ListItems items={this.state.items} deleteItem={this.deleteItem} setUpdate={this.setUpdate} />
@@ -83,3 +83,4 @@ class Todo extends React.Component {
 
 
 export default Todo;
+

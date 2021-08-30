@@ -7,16 +7,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function ListItems(props) {
     const items = props.items;
     const listItems = items.map(item => {
-        return <div className="list" key={item.key}>
+        return <div className="list" aria-label='list' key={item.key}>
             <p>
                 <input type="text" id={item.key} aria-label="edit" value={item.text} onChange={(e) => {
                     props.setUpdate(e.target.value, item.key)
                 }} />
                 <span>
 
-                    <FontAwesomeIcon className="icons" id="delete" onClick={() => {
+                    <button aria-label="delete" onClick={(e) => {
                         props.deleteItem(item.key)
-                    }} icon="trash" />
+                    }} >delete</button>
                 </span>
             </p>
 
@@ -25,7 +25,6 @@ function ListItems(props) {
     return (
         <div>{listItems}</div>
     )
-
 }
 
 ListItems.prototype = {
@@ -41,9 +40,5 @@ ListItems.prototype = {
     }))
         
 }
-
-
-
-
 
 export default ListItems;

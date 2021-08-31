@@ -64,20 +64,20 @@ class Mytask extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} aria-label='table-submit'>
                     <label>
                         FirstName :
-                        <input type='text' onChange={this.handleChange} name='fname' value={this.state.fname} /><br />
+                        <input type='text' onChange={this.handleChange} name='fname' aria-label='first-name' value={this.state.fname} /><br />
                         LastName :
-                        <input type='text' onChange={this.handleChange} name='lname' value={this.state.lname} /><br />
+                        <input type='text' onChange={this.handleChange} name='lname' aria-label='last-name' value={this.state.lname} /><br />
                         E-Mail :
-                        <input type='text' onChange={this.handleChange} name='email' value={this.state.email} /><br />
+                        <input type='text' onChange={this.handleChange} name='email' aria-label='email' value={this.state.email} /><br />
                     </label>
-                    <input type="submit" value="Submit" />
+                    <button type="submit" name="submit" value="Submit">submit</button>
                 </form>
 
                 <br />
-                <table>
+                <table aria-label='table' >
                     <tbody>
                         <tr>
                             <th>FirstNames</th>

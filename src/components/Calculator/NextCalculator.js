@@ -34,7 +34,7 @@ function NextCalculator() {
   return (
     <div className="calc-app">
       <from>
-        <input type="text" value={result} ref={inputRef} />
+        <input type="text" aria-label="result" value={result} ref={inputRef} />
       </from>
 
       <div className="keypad">
@@ -44,7 +44,7 @@ function NextCalculator() {
         <button id="backspace" onClick={backspace}>
           C
         </button>
-        <button name="+" onClick={handleClick}>
+        <button name="+" aria-label="sum" onClick={handleClick}>
           +
         </button>
         <button name="7" onClick={handleClick}>
@@ -56,7 +56,7 @@ function NextCalculator() {
         <button name="9" onClick={handleClick}>
           9
         </button>
-        <button name="-" onClick={handleClick}>
+        <button name="-" aria-label="sub" onClick={handleClick}>
           -
         </button>
         <button name="4" onClick={handleClick}>
@@ -68,7 +68,7 @@ function NextCalculator() {
         <button name="6" onClick={handleClick}>
           6
         </button>
-        <button name="*" onClick={handleClick}>
+        <button name="*" aria-label="mul" onClick={handleClick}>
           &times;
         </button>
         <button name="1" onClick={handleClick}>
@@ -80,18 +80,19 @@ function NextCalculator() {
         <button name="3" onClick={handleClick}>
           3
         </button>
-        <button name="/" onClick={handleClick}>
+        <button name="/" aria-label="div" onClick={handleClick}>
           /
         </button>
         <button name="0" onClick={handleClick}>
           0
         </button>
-        <button name="." onClick={handleClick}>
+        <button name="." aria-label="point" onClick={handleClick}>
           .
         </button>
         <button id="result" onClick={calculate}>
           Result
         </button>
+        {console.log(result)}
       </div>
     </div>
   );

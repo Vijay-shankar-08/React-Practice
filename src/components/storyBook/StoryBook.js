@@ -18,7 +18,7 @@ function StoryBook({book,author}){
             <div>
             <h1>Story Page</h1>
             Select Author:
-                <select name="value" value={value} onChange={handleChange}>
+                <select name="value" aria-label='select' value={value} onChange={handleChange}>
                     {author.map((item) => {
                         return <option key={item.authorId} value={item.authorId}>{item.authorName}</option>;
                     })}

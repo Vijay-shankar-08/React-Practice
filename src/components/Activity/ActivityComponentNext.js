@@ -30,6 +30,7 @@ function ActivityComponentNext({userDetailsList,activityList}) {
                             value = {item.activity}  
                             // defaultChecked={() => handleCheckbox(item)}
                             checked = {currentActivityList.includes(item.activity)} 
+                            aria-label={item.activity}
                             />
                             {item.label}
                             <br />
@@ -41,8 +42,8 @@ function ActivityComponentNext({userDetailsList,activityList}) {
                 <h1>Users</h1>
                 {userDetailsList.map(item =>{
                     return(
-                        <div key={item.userIdd}>
-                        <button type="button" onClick={() => handleClick(item.userId)}>{item.name}</button><br />
+                        <div key={item.userId}>
+                        <button type="button" aria-label={item.name} onClick={() => handleClick(item.userId)}>{item.name}</button><br />
                         </div>
                     )
                     
